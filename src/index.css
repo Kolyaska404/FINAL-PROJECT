@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+:root {
+  font-family: 'Neue Machina';
+  line-height: 1.5;
+  font-weight: bold;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('src/assets/fonts/GothamPro-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monument Extended';
+  src: url('src/assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monument Extended';
+  src: url('src/assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('src/assets/fonts/Gilroy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('src/assets/fonts/Gilroy-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('src/assets/fonts/Gilroy-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir Next Cyr';
+  src: url('src/assets/fonts/AvenirNextCyr-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bayshore';
+  src: url('src/assets/fonts/Bayshore.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('src/assets/fonts/SF-Pro-Display-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: 'Littera Text Book';
+	src: url('src/assets/fonts/LitteraTextRegular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Constantia';
+  src: url('Constantia.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PF Bague Sans Pro';
+  src: url('src/assets/fonts/PFBagueSansPro.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('NeueMachina-Ultralight.eot');
+  src: local('Neue Machina Ultralight'), local('NeueMachina-Ultralight'),
+      url('/src/assets/fonts/NeueMachina-Ultralight.eot') format('embedded-opentype'),
+      url('/src/assets/fonts/NeueMachina-Ultralight.woff2') format('woff2'),
+      url('/src/assets/fonts/NeueMachina-Ultralight.woff') format('woff'),
+      url('/src/assets/fonts/NeueMachina-Ultralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('NeueMachina-Light.eot');
+  src: local('Neue Machina Light'), local('NeueMachina-Light'),
+      url('/src/assets/fonts/NeueMachina-Light.eot') format('embedded-opentype'),
+      url('/src/assets/fonts/NeueMachina-Light.woff2') format('woff2'),
+      url('/src/assets/fonts/NeueMachina-Light.woff') format('woff'),
+      url('/src/assets/fonts/NeueMachina-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('NeueMachina-Black.eot');
+  src: local('Neue Machina Black'), local('NeueMachina-Black'),
+      url('/src/assets/fonts/NeueMachina-Black.eot') format('embedded-opentype'),
+      url('/src/assets/fonts/NeueMachina-Black.woff2') format('woff2'),
+      url('/src/assets/fonts/NeueMachina-Black.woff') format('woff'),
+      url('/src/assets/fonts/NeueMachina-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('NeueMachina-Regular.eot');
+  src: local('Neue Machina Regular'), local('NeueMachina-Regular'),
+      url('/src/assets/fonts/NeueMachina-Regular.eot') format('embedded-opentype'),
+      url('/src/assets/fonts/NeueMachina-Regular.woff2') format('woff2'),
+      url('/src/assets/fonts/NeueMachina-Regular.woff') format('woff'),
+      url('/src/assets/fonts/NeueMachina-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('NeueMachina-Bold.eot');
+  src: local('Neue Machina Bold'), local('NeueMachina-Bold'),
+      url('/src/assets/fonts/NeueMachina-Bold.eot') format('embedded-opentype'),
+      url('/src/assets/fonts/NeueMachina-Bold.woff2') format('woff2'),
+      url('/src/assets/fonts/NeueMachina-Bold.woff') format('woff'),
+      url('/src/assets/fonts/NeueMachina-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('NeueMachina-Medium.eot');
+  src: local('Neue Machina Medium'), local('NeueMachina-Medium'),
+      url('/src/assets/fonts/NeueMachina-Medium.eot') format('embedded-opentype'),
+      url('/src/assets/fonts/NeueMachina-Medium.woff2') format('woff2'),
+      url('/src/assets/fonts/NeueMachina-Medium.woff') format('woff'),
+      url('/src/assets/fonts/NeueMachina-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('NeueMachina-Ultrabold.eot');
+  src: local('Neue Machina Ultrabold'), local('NeueMachina-Ultrabold'),
+      url('/src/assets/fonts/NeueMachina-Ultrabold.eot') format('embedded-opentype'),
+      url('/src/assets/fonts/NeueMachina-Ultrabold.woff2') format('woff2'),
+      url('/src/assets/fonts/NeueMachina-Ultrabold.woff') format('woff'),
+      url('/src/assets/fonts/NeueMachina-Ultrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
