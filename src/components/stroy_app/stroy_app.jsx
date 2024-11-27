@@ -2,9 +2,15 @@ import { Header } from "../header"
 import { Rate } from "../rate" 
 import { Footer } from "../Footer"
 import { Block } from "../stroy_plan"
+import { useEffect } from "react"
 import '/src/App.css'
 
 export function Stroy_app() {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"})
+    }, [])
     return (
         <>
             <div className='w-full flex flex-col min-h-full mx-auto relative bg-[#F5F5F7]'>

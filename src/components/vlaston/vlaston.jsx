@@ -1,8 +1,14 @@
 import { Header } from "../header"
 import { Rate } from "../rate" 
 import { Footer } from "../Footer"
+import { useEffect } from "react"
 import '/src/App.css'
 export function Vlaston() {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"})
+    }, [])
     return (
         <div className='w-full flex flex-col min-h-full mx-auto relative'>
             <Header title='vlaston' desk='Агенство недвижимости' kind2='Одностраничный сайт'/>

@@ -106,8 +106,13 @@
     filter: contrast(98.5%);
 }
 
+.visible {
+    transition: all 3s;
+    opacity: 1;
+}
+
 .animated {
-    transition: all .5s;
+    transition: all 3.5s;
 }
 
 .btn_animated {
@@ -128,7 +133,7 @@
 }
 
 .desk_text {
-    font-family: "Onest", sans-serif;;
+    font-family: "Onest", sans-serif;
 }
 
 .constanta {
@@ -303,3 +308,83 @@
 .inter {
     font-family: "Inter", sans-serif;
 }
+
+.inputt::placeholder {
+    color: #FFFFFF4D;
+    font-family: "Onest", sans-serif;
+}
+
+.checkbox-input, .radio-input {
+    appearance: none;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background: black;
+    border-radius: 2px;
+    border: 0.7px solid #FFFFFF;
+    transition: 500ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.radio-input {
+    border-radius: 100%;
+}
+.checkbox-input::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    font-size: 30px;
+    background-image: url('/public/main page/icons/bl_confirm.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 500ms;
+}
+.checkbox-input:checked::after {
+    width: 8px;
+    height: 6px;
+    transition: 500ms;
+}
+.checkbox-input:checked {
+    background-color: #D2FE67;
+    border-color: #D2FE67;
+    transition: 500ms;
+}
+.radio-input:checked {
+    border-color: #D2FE67;
+    transition: 500ms;
+}
+.checkbox-input:checked + label,
+.radio-input:checked + label{
+    color: #D2FE67;
+    transition: 500ms;
+}
+.radio-input::after {
+    content: "";
+    display: block;
+    bottom: 0;
+    width: 0px;
+    height: 0px;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    transition: 500ms;
+}
+.radio-input:checked::after {
+    background-color: #D2FE67;
+    width: 8px;
+    height: 8px;
+    transition: 300ms;
+}
+
+.radio-input:disabled {
+    background: #ccc;
+    border-color: #ccc;
+}
+
+.checkbox-input:disabled,
+.radio-input:disabled {
+    background: #ccc;
+    border-color: white;
+}
+

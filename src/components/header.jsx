@@ -1,11 +1,15 @@
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import { Menu } from "./menu"
 export function Header( {title, title2, title3, year, desk, kind1, kind2, img1='public/homyes/metaball1.png', img2='public/homyes/metaball3.png', img3='public/homyes/metaball2.png'} ) {
+    const [showModal, setShowModal] = useState(false)
     return (
-        <header className="uppercase bg-[#F5F5F7] text-black h-[820px]">
+        <header className="uppercase bg-[#F5F5F7] text-black h-[820px] relative">
             <div className="px-[80px] relative max-w-[1440px] h-[820px] mx-auto pb-[47px] pt-[20px] flex flex-col w-full">
-                <nav className="flex justify-between items-center font-medium">
-                    <h2 className="flex items-center gap-x-[10px] text-h7 leading-h7"><img src="public/portfolio/LOGO.png" alt="" /> Yudaev branding</h2>
-                    <button className="hover:bg-gr active:bg-sal active:text-[#00000099] transition-all delay-25 z-10 flex items-center gap-x-[10px] px-[15px] py-[5.5px] rounded-[100px] border-[1px] border-black text-h9 leading-h9"><img src="/public/main page/icons/mn_icn.svg" alt="" />МЕНЮ</button>
-                    <button className="hover:bg-gr active:bg-sal active:text-[#00000099] transition-all delay-25 z-10 uppercase px-[15px] py-[5.5px] rounded-[100px] border-[1px] border-black text-h9 leading-h9">Заполнить бриф</button>
+                <nav className="flex items-center font-medium">
+                    <h2 className="flex items-center gap-x-[10px] text-h7 leading-h7 mr-[354px]"><img src="public/portfolio/LOGO.png" alt="" /> Yudaev branding</h2>
+                    <button onClick={() => setShowModal(true)} className="hover:bg-gr active:bg-sal active:text-[#00000099] transition-all delay-25 z-[1] flex items-center gap-x-[10px] px-[15px] py-[5.5px] rounded-[100px] border-[1px] border-black text-h9 leading-h9 mr-[445px]"><img src="/public/main page/icons/mn_icn.svg" alt="" />МЕНЮ</button>
+                    <Link to='/Breef' className="hover:bg-gr active:bg-sal active:text-[#00000099] transition-all delay-25 z-[1] uppercase px-[15px] py-[5.5px] rounded-[100px] border-[1px] border-black text-h9 leading-h9">Заполнить бриф</Link>
                 </nav>
                 <img className="absolute left-0 top-0 fill-[#D6CFCA]" src={img1} alt="" />
                 <img className="absolute top-0 left-[778px] fill-[#D6CFCA]" src={img2} alt="" />
@@ -22,6 +26,7 @@ export function Header( {title, title2, title3, year, desk, kind1, kind2, img1='
                         </div>
                     </div>
                 </div>
+                {showModal && <Menu closeModal={() => setShowModal(false)} />}
             </div>
         </header>
     )

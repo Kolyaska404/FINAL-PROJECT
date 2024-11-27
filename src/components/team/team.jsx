@@ -1,13 +1,34 @@
 import { Footer } from "../Footer";
-import { Header } from "../header";
 import { Run_stroke_13, Run_stroke_12, Run_stroke_14 } from "../main_page/run_stroke";
+import { Menu } from "../menu";
+import { useState, useEffect } from "react";
 import '/src/App.css'
 
 export function Team() {
+    const [showModal, setShowModal] = useState(false)
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"})
+    }, [])
     return (
         <>
             <div className='w-full flex flex-col min-h-full mx-auto relative'>
-                <Header title='Команда' title2='Yudaev' title3='branding' desk='Помогаем бизнесу решить задачи в интернете.' year=''/>
+                <header className="bg-white text-black relative">
+                    <div className='px-[80px] max-w-[1440px] h-[820px] relative mx-auto pb-[30px] pt-[18px] flex flex-col w-full'>
+                        <div className="flex text-h9 leading-h9 font-medium relative uppercase">
+                            <h2 className="flex items-center gap-x-[10px] text-h7 leading-h7 mr-[354px]"><img src="public/portfolio/LOGO.png" alt="" /> Yudaev branding</h2>
+                            <button onClick={() => setShowModal(true)} className="hover:bg-gr active:bg-sal active:text-[#00000099] transition-all delay-25 z-[1] flex items-center gap-x-[10px] px-[15px] py-[5.5px] rounded-[100px] border-[1px] border-black mr-[445px]"><img src="/public/main page/icons/mn_icn.svg" alt="" />МЕНЮ</button>
+                            <button className="absolute right-0 hover:bg-gr active:bg-sal active:text-[#00000099] transition-all delay-25 z-[1] uppercase px-[15px] py-[5.5px] rounded-[100px] border-[1px] border-black">Заполнить бриф</button>
+                        </div>
+                        <img className="absolute left-0 top-0 fill-[#D6CFCA]" src='public/homyes/metaball1.png' alt="" />
+                        <img className="absolute top-0 left-[778px] fill-[#D6CFCA]" src='public/homyes/metaball3.png' alt="" />
+                        <img className="absolute top-[459px] left-[286px] fill-[#D6CFCA]" src='public/homyes/metaball2.png' alt="" />
+                        <h1 className='font-medium text-h1 leading-h1 my-auto mx-auto text-white mix-blend-difference uppercase'>Команда <br /><span className="ml-[137px]">Yudaev</span> <br /><span className="ml-[-100px]">branding</span></h1>
+                        <p className="absolute desk_text text-h8 leading-h8 font-normal bottom-[100px] left-[470px] mix-blend-difference text-white normal-case">Помогаем бизнесу решить задачи в интернете.</p>
+                    </div>
+                    {showModal && <Menu closeModal={() => setShowModal(false)} />}
+                </header>
                 <main className="bg-black">
                     <section className="conteiner pt-[150px] pb-[300px]">
                         <div className="border-y-[1px] border-[#FFFFFF66] text-white font-normal">
@@ -60,8 +81,8 @@ export function Team() {
                             <Run_stroke_13 title='Юдаев' desk='Основатель Студии'/>
                         </div>
                         <div className="relative pb-[70px] mb-[250px] mix-blend-difference">
-                            <div className="bg-[#D2FE67] rounded-[10px] w-[480px] h-[600px] absolute right-[250px]">
-                                <img src="" alt="" />
+                            <div className="rounded-[10px] w-[480px] h-[600px] absolute right-[250px]">
+                                <img src="public\team\andrew_tenov.png" alt="" />
                             </div>
                             <Run_stroke_12 title='Андрей'/>
                             <Run_stroke_13 title='ТЕнов' desk='Сооснователь'/>

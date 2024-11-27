@@ -5,7 +5,8 @@ export const PRODUCTS = [
         desk: 'Производство мебели',
         img: '/public/portfolio/marsel.png',
         name: 'Marsel',
-        year: '2021'
+        year: '2021',
+        link: '/Marsel'
     },
     {
         id: 1,
@@ -13,7 +14,8 @@ export const PRODUCTS = [
         desk: 'Строительство домов',
         img: 'public/portfolio/homyes.png',
         name: 'Homyes',
-        year: '2021'
+        year: '2021',
+        link: '/Homyes'
     },
     {
         id: 2,
@@ -21,7 +23,8 @@ export const PRODUCTS = [
         desk: 'Строительство домов',
         img: '/public/portfolio/starkwood.png',
         name: 'Starkwood',
-        year: '2021'
+        year: '2021',
+        link: '/Starkwood'
     },
     {
         id: 3,
@@ -29,7 +32,8 @@ export const PRODUCTS = [
         desk: 'Оформление ипотеки',
         img: '/public/portfolio/ipoteka.png',
         name: 'Vlaston',
-        year: '2021'
+        year: '2021',
+        link: '/Vlaston'
     },
     {
         id: 4,
@@ -37,7 +41,8 @@ export const PRODUCTS = [
         desk: 'Голографические вентиляторы',
         img: '/public/portfolio/xvision.png',
         name: 'XVision',
-        year: '2021'
+        year: '2021',
+        link: '/XVISION'
     },
     {
         id: 5,
@@ -45,7 +50,8 @@ export const PRODUCTS = [
         desk: 'Финансы',
         img: '/public/portfolio/security.png',
         name: 'Global Secure Invest',
-        year: '2021'
+        year: '2021',
+        link: '/Security'
     },
     {
         id: 6,
@@ -53,7 +59,8 @@ export const PRODUCTS = [
         desk: 'Сфера питания',
         img: '/public/portfolio/food.png',
         name: 'Performance Group',
-        year: '2021'
+        year: '2021',
+        link: '/Perf_group'
     },
     {
         id: 7,
@@ -61,7 +68,8 @@ export const PRODUCTS = [
         desk: 'Мебель',
         img: '/public/portfolio/furniture.png',
         name: 'Rooblook',
-        year: '2021'
+        year: '2021',
+        link: '/Roblook'
     },
     {
         id: 8,
@@ -69,7 +77,8 @@ export const PRODUCTS = [
         desk: 'Обучение',
         img: '/public/portfolio/study.png',
         name: 'Dubai',
-        year: '2021'
+        year: '2021',
+        link: '/ZHK'
     },
     {
         id: 9,
@@ -77,7 +86,8 @@ export const PRODUCTS = [
         desk: 'Ремонт помещений',
         img: '/public/portfolio/remont.png',
         name: 'ZHK',
-        year: '2021'
+        year: '2021',
+        link: '/Stroy_app'
     },
     {
         id: 10,
@@ -85,6 +95,7 @@ export const PRODUCTS = [
         desk: 'Составление сметы',
         img: '/public/portfolio/smeta.png',
         name: 'Stroy App',
-        year: '2021'
+        year: '2021',
+        link: '/Dubai'
     }
 ]
