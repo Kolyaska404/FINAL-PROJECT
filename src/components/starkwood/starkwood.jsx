@@ -1,8 +1,14 @@
 import { Header } from '/src/components/header.jsx'
 import { Footer } from '/src/components/Footer.jsx'
 import { Rate } from '../rate' 
+import { useEffect } from 'react'
 
 export function Starkwood() {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"})
+    }, [])
     return (
         <div className='w-full flex flex-col min-h-full mx-auto relative'>
             <Header title='Starkwood' desk='Строительство домов' kind1='Брендинг' kind2='Многостраничный сайт'/>

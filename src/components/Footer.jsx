@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Footer() {
     function scrollToTop(scrollDuration) {
         var scrollStep = -window.scrollY / (scrollDuration / 15),
@@ -60,7 +62,7 @@ export function Footer() {
                     <div className="basis-1/2">
                         <h2 className="text-h3 leading-h3 mb-[30px] ml-[80px]">Бриф</h2>
                         <p className="ml-[250px] text-h8 leading-h8 font-normal mb-[60px]">Ответьте на 10 вопросов, чтобы мы подсчитали стоимость вашего проекта.</p>
-                        <a href="#" className="flex items-center justify-center ml-[250px] px-[120px] py-[186px] rounded-[100%] border-[#FFFFFF] border-[1px] w-[390px] h-[390px] whitespace-nowrap">Заполнить бриф</a>
+                        <Link to='/Breef' href="#" className="flex items-center justify-center ml-[250px] px-[120px] py-[186px] rounded-[100%] border-[#FFFFFF] border-[1px] w-[390px] h-[390px] whitespace-nowrap">Заполнить бриф</Link>
                     </div>
                 </div>
             </div>
@@ -72,12 +74,12 @@ export function Footer() {
                     <div className="mix-blend-difference uppercase font-medium">
                         <h2 className="absolute left-[650px] uppercase top-[157px] flex gap-x-[10px] text-h7 leading-h7 font-medium text-white"><img src="public/main page/icons/footer_logo.png" alt="" /> Yudaev branding</h2>
                         <nav className="pt-[277px] text-h9 leading-h9 flex gap-x-[380px] items-center">
-                            <button onClick={() => {scrollToTop(300)}} className="flex gap-x-[5px] uppercase px-[15px] py-[6px] rounded-[100px] border-[2px] border-white transition-colors delay-[0.09s] hover:text-black hover:bg-white hover:fill-black"><img src="public/main page/icons/footer_galka.svg" alt="" /> Вернуться наверх</button>
+                            <button onClick={() => {scrollTo({top: 0,behavior: "smooth"})}} className="flex gap-x-[5px] uppercase px-[15px] py-[6px] rounded-[100px] border-[2px] border-white transition-colors delay-[0.09s] hover:text-black hover:bg-white hover:fill-black"><img src="public/main page/icons/footer_galka.svg" alt="" /> Вернуться наверх</button>
                             <ul className="flex gap-x-[40px]">
-                                <li className="relative headr_a leading-h6"><a href="">Услуги (6)</a></li>
-                                <li className="relative headr_a leading-h6"><a href="">Портфолио (12)</a></li>
-                                <li className="relative headr_a leading-h6"><a href="">Команда</a></li>
-                                <li className="relative headr_a leading-h6"><a href="">Контакты</a></li>
+                                <li className="relative headr_a leading-h6"><Link to="/Service">Услуги (6)</Link></li>
+                                <li className="relative headr_a leading-h6"><Link to="/portfolio">Портфолио (12)</Link></li>
+                                <li className="relative headr_a leading-h6"><Link to="/Team">Команда</Link></li>
+                                <li className="relative headr_a leading-h6"><Link to="/Contacts">Контакты</Link></li>
                             </ul>
                         </nav>
                     </div>

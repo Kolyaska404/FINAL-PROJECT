@@ -4,9 +4,15 @@ import { Run_stroke_6 } from "../main_page/run_stroke"
 import { Header } from "../header"
 import { Rate } from "/src/components/rate.jsx"
 import { Footer } from "/src/components/Footer.jsx"
+import { useEffect } from "react"
 import '/src/App.css'
 
 export function Marsel() {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"})
+    }, [])
     return (
         <>
             <div className='w-full flex flex-col min-h-full mx-auto relative bg-[#F5F5F7]'>
