@@ -388,3 +388,36 @@
     border-color: white;
 }
 
+.hover_anim_on[on='true'] {
+    animation: wobble 1s 1;
+}
+
+section.hover_anim_on {
+    animation: open 3s ;
+}
+section.hover_anim_off {
+    animation: close 3s ;
+}
+
+@keyframes open {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    to {
+        display: block;
+        z-index: 3;
+        opacity: 1;
+    }
+}
+@keyframes close {
+    from {
+        display: block;
+        z-index: 3;
+        opacity: 1;
+    }
+    to {
+        display: none;
+        opacity: 0;
+    }
+}
