@@ -1,16 +1,18 @@
 import { Footer } from '/src/components/Footer.jsx'
-import { Run_stroke } from './run_stroke'
+import { Run_stroke, Run_stroke_13, Run_stroke_12_2 } from './run_stroke'
 import { Accord } from './accordeon'
 import { Run_stroke_2 } from './run_stroke'
 import { Run_stroke_3 } from './run_stroke'
 import { Designs } from './Designs'
 import { Cards } from './Cards'
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState,useEffect } from 'react'
 import { Menu } from '../menu'
+import { Hover } from './hover'
 import '/src/App.css'
 
 export function Main_page() {
+    const [open, setOpen] = useState(false)
     const [showModal, setShowModal] = useState(false)
     useEffect(() => {
         window.scrollTo({
@@ -44,13 +46,27 @@ export function Main_page() {
             </header>
             <main className="bg-black pt-[134px]">
                 <div className='px-[80px] max-w-[1440px] mx-auto flex flex-col'>
-                    <section className="mb-[300px]">
-                        <h2 className="text-h3 leading-h3 uppercase mb-[100px]">
+                    <section className="mb-[300px] relative z-[2]">
+                        <h2 className="text-h3 leading-h3 font-normal uppercase mb-[100px] z-[4] relative text-white">
                             <span className="ml-[170px]">Наша сильная сторона</span> <br />
                             это создание дизайна <br />
                             <span className="ml-[170px]">сайтов и приложений.</span>
                         </h2>
-                        <div className="mb-[100px] text-[#FFFFFFB2] cursor-pointer mx-auto rounded-[100%] border-[1px] border-white text-center px-[140px] py-[230px] block w-[500px] h-[500px]">Нажмите, чтобы увидеть <br /> фотку основателя</div>
+                        <div onClick={() => setOpen(true)} className={`z-[2] mb-[100px] text-[#FFFFFFB2] ${open ? 'opacity-0' : 'opacity-100'} transition-opacity cursor-pointer mx-auto rounded-[100%] border-[1px] border-white text-center px-[140px] py-[230px] block w-[500px] h-[500px]`}>Наведите, чтобы увидеть <br /> фотку основателя
+                        </div>
+                        <section onClick={() => setOpen(false)} className={`absolute top-0 ${open ? 'hover_anim_on' : 'hover_anim_off'} w-[1440px]`}>
+                            <img className='absolute top-[496px]' src="public\main page\gr_metball_1.png" alt="" />
+                            <img className='absolute top-[5px] left-[120px]' src="public\main page\gr_metball_2.png" alt="" />
+                            <img className='absolute top-[86px] right-[80px]' src="public\main page\gr_metball_3.png" alt="" />
+                            <img className='absolute top-[445px] right-[80px]' src="public\main page\gr_metball_4.png" alt="" />
+                            <div className="pb-[40px] mb-[250px] mt-[364px] ml-[-80px] mix-blend-difference absolute w-[1440px] mx-auto">
+                                <div className="bg-[#D2FE67] rounded-[10px] w-[414px] h-[500px] absolute left-[0] right-0 mx-auto">
+                                    <img src="public\main page\yuadaev.png" alt="" />
+                                </div>
+                                <Run_stroke_12_2 title='Никита'/>
+                                <Run_stroke_13 title='Юдаев' desk='Основатель Студии'/>
+                            </div>
+                        </section>
                         <ul className="grid gap-x-[60px] ml-[170px] grid-cols-3 gap-y-[62px]">
                             <li className="w-[330px]">
                                 <h4 className="text-h7 leading-h7 text-[#FFFFFF66]">(ПЕРВОЕ)</h4>

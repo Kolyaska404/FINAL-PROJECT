@@ -62,7 +62,7 @@ export function Footer() {
                     <div className="basis-1/2">
                         <h2 className="text-h3 leading-h3 mb-[30px] ml-[80px]">Бриф</h2>
                         <p className="ml-[250px] text-h8 leading-h8 font-normal mb-[60px]">Ответьте на 10 вопросов, чтобы мы подсчитали стоимость вашего проекта.</p>
-                        <Link to='/Breef' href="#" className="flex items-center justify-center ml-[250px] px-[120px] py-[186px] rounded-[100%] border-[#FFFFFF] border-[1px] w-[390px] h-[390px] whitespace-nowrap">Заполнить бриф</Link>
+                        <Link to='/Breef' href="#" className="hover:bg-[#D2FE67] hover:text-black hover:border-[#D2FE67] active:bg-[#DDFE8D] active:text-[#00000099] active:border-[#DDFE8D] transition-colors flex items-center justify-center ml-[250px] px-[120px] py-[186px] rounded-[100%] border-[#FFFFFF] border-[1px] w-[390px] h-[390px] whitespace-nowrap">Заполнить бриф</Link>
                     </div>
                 </div>
             </div>
