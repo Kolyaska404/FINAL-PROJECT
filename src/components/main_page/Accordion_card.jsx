@@ -1,6 +1,6 @@
 export function Acc_card() {
     return (
-        <div className="text-black">
+        <div className="text-black bg-white w-[630px]">
             <h3 className="w-full bg-black text-right px-[20px] text-white py-[8px]">Лендинг</h3>
             <h2 className="text-black my-[36px] text-[89.5px] leading-h2 whitespace-nowrap font-medium tracking-[-3%]">Этапы работ</h2>
             <ul className="text-left text-h7 leading-h7">
