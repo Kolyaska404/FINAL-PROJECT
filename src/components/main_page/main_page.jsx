@@ -8,7 +8,7 @@ import { Cards } from './Cards'
 import { Link } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import { Menu } from '../menu'
-import { Hover } from './hover'
+import { CSSTransition } from 'react-transition-group'
 import '/src/App.css'
 
 export function Main_page() {
@@ -52,21 +52,23 @@ export function Main_page() {
                             это создание дизайна <br />
                             <span className="ml-[170px]">сайтов и приложений.</span>
                         </h2>
-                        <div onClick={() => setOpen(true)} className={`z-[2] mb-[100px] text-[#FFFFFFB2] ${open ? 'opacity-0' : 'opacity-100'} transition-opacity cursor-pointer mx-auto rounded-[100%] border-[1px] border-white text-center px-[140px] py-[230px] block w-[500px] h-[500px]`}>Наведите, чтобы увидеть <br /> фотку основателя
+                        <div onClick={() => setOpen(true)} className={`z-[2] mb-[100px] text-[#FFFFFFB2] ${open ? 'opacity-0' : 'opacity-100'} transition-opacity delay-250 select-none cursor-pointer mx-auto rounded-[100%] border-[1px] border-white text-center px-[140px] py-[230px] block w-[500px] h-[500px]`}>Наведите, чтобы увидеть <br /> фотку основателя
                         </div>
-                        <section onClick={() => setOpen(false)} className={`absolute top-0 ${open ? 'hover_anim_on' : 'hover_anim_off'} w-[1440px]`}>
-                            <img className='absolute top-[496px]' src="public\main page\gr_metball_1.png" alt="" />
-                            <img className='absolute top-[5px] left-[120px]' src="public\main page\gr_metball_2.png" alt="" />
-                            <img className='absolute top-[86px] right-[80px]' src="public\main page\gr_metball_3.png" alt="" />
-                            <img className='absolute top-[445px] right-[80px]' src="public\main page\gr_metball_4.png" alt="" />
-                            <div className="pb-[40px] mb-[250px] mt-[364px] ml-[-80px] mix-blend-difference absolute w-[1440px] mx-auto">
-                                <div className="bg-[#D2FE67] rounded-[10px] w-[414px] h-[500px] absolute left-[0] right-0 mx-auto">
-                                    <img src="public\main page\yuadaev.png" alt="" />
+                        <CSSTransition in={open} timeout={300} classNames='open' unmountOnExit>
+                            <div onClick={() => setOpen(false)} className='absolute top-0 w-[1440px]'>
+                                <img className='absolute top-[496px]' src="public\main page\gr_metball_1.png" alt="" />
+                                <img className='absolute top-[5px] left-[120px]' src="public\main page\gr_metball_2.png" alt="" />
+                                <img className='absolute top-[86px] right-[80px]' src="public\main page\gr_metball_3.png" alt="" />
+                                <img className='absolute top-[445px] right-[80px]' src="public\main page\gr_metball_4.png" alt="" />
+                                <div className="pb-[40px] mb-[250px] mt-[364px] ml-[-80px] mix-blend-difference absolute w-[1440px] mx-auto">
+                                    <div className="bg-[#D2FE67] rounded-[10px] w-[414px] h-[500px] absolute left-[0] right-0 mx-auto">
+                                        <img src="public\main page\yuadaev.png" alt="" />
+                                    </div>
+                                    <Run_stroke_12_2 title='Никита'/>
+                                    <Run_stroke_13 title='Юдаев' desk='Основатель Студии'/>
                                 </div>
-                                <Run_stroke_12_2 title='Никита'/>
-                                <Run_stroke_13 title='Юдаев' desk='Основатель Студии'/>
                             </div>
-                        </section>
+                        </CSSTransition>
                         <ul className="grid gap-x-[60px] ml-[170px] grid-cols-3 gap-y-[62px]">
                             <li className="w-[330px]">
                                 <h4 className="text-h7 leading-h7 text-[#FFFFFF66]">(ПЕРВОЕ)</h4>

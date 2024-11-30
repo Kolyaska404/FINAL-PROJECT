@@ -78,7 +78,7 @@ export const PRODUCTS = [
         img: '/public/portfolio/study.png',
         name: 'Dubai',
         year: '2021',
-        link: '/ZHK'
+        link: '/Dubai'
     },
     {
         id: 9,
@@ -87,7 +87,7 @@ export const PRODUCTS = [
         img: '/public/portfolio/remont.png',
         name: 'ZHK',
         year: '2021',
-        link: '/Stroy_app'
+        link: '/ZHK'
     },
     {
         id: 10,
@@ -96,6 +96,6 @@ export const PRODUCTS = [
         img: '/public/portfolio/smeta.png',
         name: 'Stroy App',
         year: '2021',
-        link: '/Dubai'
+        link: '/Stroy_app'
     }
 ]

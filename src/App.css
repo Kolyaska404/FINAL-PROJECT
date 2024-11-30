@@ -112,7 +112,7 @@
 }
 
 .animated {
-    transition: all 3.5s;
+    transition: all 0.5s;
 }
 
 .btn_animated {
@@ -392,13 +392,6 @@
     animation: wobble 1s 1;
 }
 
-section.hover_anim_on {
-    animation: open 3s ;
-}
-section.hover_anim_off {
-    animation: close 3s ;
-}
-
 @keyframes open {
     from {
         display: none;
@@ -420,4 +413,22 @@ section.hover_anim_off {
         display: none;
         opacity: 0;
     }
+}
+
+.open-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.open-enter-active {
+    opacity: 1;
+    transform: translateZ(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.open-exit {
+    opacity: 1;
+}
+.open-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
 }
