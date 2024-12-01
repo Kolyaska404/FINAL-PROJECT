@@ -141,25 +141,25 @@ export function Homyes() {
                                             <div className='border-[0.5px] border-[#00000033] px-[75px] pb-[43px]'><img className='w-[240px]' src="public\homyes\half2.png" alt="" /></div>
                                         </div>
                                     </div>
-                                    <div className='ml-[650px]'>
-                                        <div className='px-[45px] py-[48px] border-[0.5px] border-[#00000033] mb-[20px]'><img className='w-[370px]' src="public\homyes\logo1.png" alt="" /></div>
+                                    <div className='ml-[650px] mb-[20px]'>
+                                        <div className='px-[45px] py-[48px] border-[0.5px] border-[#00000033] mb-[20px] w-[460px]'><img className='w-[370px]' src="public\homyes\logo1.png" alt="" /></div>
                                         <p className='font-medium text-h8 leading-h8'>Полный логотип по горизонтали</p>
                                     </div>
-                                    <div>
-                                        <div className='px-[45px] py-[48px]  border-[0.5px] border-[#00000033] mb-[20px]'><img src="public\homyes\logo2.png" alt="" /></div>
+                                    <div className='ml-[170px]'>
+                                        <div className='px-[45px] py-[48px] border-[0.5px] border-[#00000033] mb-[20px] w-[460px] '><img src="public\homyes\logo2.png" alt="" /></div>
                                         <p className='font-medium text-h8 leading-h8'>логотип по горизонтали без слогана</p>
                                     </div>
                                 </div>
                             </div>
                             <div className='mb-[150px]'>
                                 <div className='ml-[560px]'>
-                                    <h3 className='flex gap-x-[19px] uppercase text-h4 leading-h4 mb-[60px] font-medium'>Дизайн<span>Система</span></h3>
+                                    <h3 className='flex gap-x-[161px] uppercase text-h4 leading-h4 mb-[60px] font-medium'>Дизайн<span>Система</span></h3>
                                     <p className='w-[720px] text-h5 leading-h5 mb-[100px] font-normal desk_text'>Чтобы сформировать атмосферу теплоты, уюта, изысканности и премиальность, использовали шрифт с засечками и комбинацию светло-бронзового оттенка и черного цвета.</p>
                                 </div>
                                 <ul>
                                     <li className="border-t-[1px] border-b-[1px] boreder-[#00000033] py-[10px]">
                                         <h4 className="ml-[170px] uppercase font-medium text-h8 leading-[18px]">Типографика<span className="ml-[185px]">2 шрифта</span></h4>
-                                        <h2 className="text-[88px] leading-h3 uppercase ml-[400px] mt-[122px] mb-[80px] font-normal playfair">Playfair</h2>
+                                        <h2 className="text-[110px] leading-[121px] uppercase ml-[400px] mt-[122px] mb-[80px] font-normal playfair">Playfair</h2>
                                         <ul className="flex items-center uppercase text-[#00000066]">
                                             <li className="mr-[341px]">Для заголовков</li>
                                             <li className="mr-[186px]">Regular</li>
@@ -220,7 +220,7 @@ export function Homyes() {
                     </div>
                     <img className='mb-[250px] mx-auto' src="public\homyes\Флаг 2 1.png" alt="" />
                     <div className='mb-[250px] relative mx-auto flex flex-col w-full'>
-                        <section className="px-[80px] relative max-w-[1440px] mx-auto flex flex-col w-full mt-[150px]">
+                        <section className="px-[80px] relative max-w-[1440px] mx-auto flex flex-col w-full">
                             <div className='ml-[560px]'>
                                 <h3 className='flex gap-x-[19px] uppercase text-h4 leading-h4 mb-[60px] font-medium'>Брендбук</h3>
                                 <p className='w-[720px] text-h5 leading-h5 mb-[100px] font-normal desk_text'>Подготовили для клиента брендбук, со всей атрибутикой фирменого стиля и правилами его использования. Чтобы клиент понимал как правильно его применять в разных ситуациях.</p>

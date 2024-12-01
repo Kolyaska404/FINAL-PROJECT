@@ -11,8 +11,9 @@ export function Swiperr() {
         <>
             <Run_stroke_7/>
             <div className="relative flex flex-col w-full">
-                <section className='overflow-hidden mb-[150px] mx-auto'>
+                <section className='overflow-hidden mb-[150px] w-[1700px] px-[80px] mx-auto'>
                     <Swiper slidesPerView={3}
+                            spaceBetween={30}
                             freeMode={true}
                             modules={[FreeMode]}
                             className="mySwiper"
@@ -80,6 +81,11 @@ export function Swiperr() {
                         <SwiperSlide>
                             <Link to="/portfolio" className='h-[660px] w-[500px] flex flex-col items-center uppercase justify-center border-black border-[1px] rounded-[10px]'>
                                 <h4 className="flex gap-x-[10px] items-center">все работы (11)<img src="public\marsel\arrow.svg" alt="" /></h4>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link className='h-[660px] w-[500px] flex flex-col items-center uppercase justify-center'>
+                            
                             </Link>
                         </SwiperSlide>
                     </Swiper>
