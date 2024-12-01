@@ -89,7 +89,7 @@ export function Marsel() {
                             Также преимущество такого знака в универсальности и прозрачности для клиентов.</p>
                         </section>
                     </div>
-                    <div className="px-[80px] relative mx-auto flex flex-col w-full bg-[#EBEAE9]">
+                    <div className="relative mx-auto flex flex-col w-full bg-[#EBEAE9]">
                         <section className="px-[80px] relative max-w-[1440px] mx-auto flex flex-col w-full">
                             <div className="flex mb-[250px]">
                                 <div className="mt-[466px]">
@@ -111,7 +111,7 @@ export function Marsel() {
                             </div>
                             <div>
                                 <div className="ml-[560px]">
-                                    <h3 className="uppercase flex gap-x-[19px] pt-[150px] text-h4 leading-h4 mb-[60px] font-medium">Дизайн <span className="ml-[164px]">Система</span></h3>
+                                    <h3 className="uppercase flex pt-[150px] text-h4 leading-h4 mb-[60px] font-medium">Дизайн <span className="ml-[161px]">Система</span></h3>
                                     <p className='w-[720px] text-h5 leading-h5 mb-[100px] font-normal desk_text'>Чтобы сформировать атмосферу изысканности, чистоты и премиальности, использовали минималистиный шрифт и приглушенные цвета: песочный, серо-голубой и льняной.</p>
                                 </div>
                                 <ul className="mb-[150px]">
@@ -176,7 +176,7 @@ export function Marsel() {
                             </div>
                         </section>
                     </div>
-                    <div className="px-[80px] relative mx-auto flex flex-col w-full">
+                    <div className="relative mx-auto flex flex-col w-full">
                         <section className="px-[80px] relative max-w-[1440px] mx-auto flex flex-col w-full pt-[250px]">
                             <h3 className='flex gap-x-[112px] uppercase text-h4 leading-h4 mb-[60px] font-medium ml-[560px]'>Брендбук</h3>
                             <p className='w-[720px] text-h5 leading-h5 mb-[100px] font-normal desk_text ml-[560px]'>Подготовили для клиента брендбук, со всей атрибутикой фирменого стиля и правилами его использования. Чтобы клиент понимал как правильно его применять в разных ситуациях.</p>
@@ -220,7 +220,7 @@ export function Marsel() {
                             </div>
                         </section>
                     </div>
-                    <div className="px-[80px] relative mx-auto flex flex-col w-full bg-black text-white">
+                    <div className="relative mx-auto flex flex-col w-full bg-black text-white">
                         <section className="px-[80px] relative max-w-[1440px] mx-auto flex flex-col w-full pt-[250px]">
                                 <h3 className="flex flex-col uppercase text-h4 leading-h4 mb-[60px] font-medium ml-[560px]">Другие<span className="ml-[90px]">Маркетинговые</span><span className="ml-[330px]">Материалы</span></h3>
                                 <p className='w-[720px] text-h5 leading-h5 mb-[100px] font-normal desk_text ml-[560px]'>Также разработали дизайн для печатных материалов: визитки, документы,  буклеты, каталог.</p>

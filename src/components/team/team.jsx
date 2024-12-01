@@ -107,7 +107,7 @@ export function Team() {
                             </h3>
                             <p className="absolute top-[245px] right-[349px] w-[301px] font-normal tracking-[-1px] text-center desk_text">(Наведите на эмодзи, чтобы посмотреть на работы наших учеников)</p>
                         </div>
-                        <ul className="flex flex-col gap-y-[20px] absolute top-[259px] left-[25px] z-[0]">
+                        <ul className="flex flex-col gap-y-[20px] absolute top-[259px] left-[-35px] z-[0]">
                             <li className="flex gap-x-[20px]">
                                 <div className="w-[150px] h-[150px] bg-[#C4C4C4] rounded-[100%] overflow-hidden"><img className="opacity-0 hover:opacity-100 transition-opacity" src="public\team\img1.jpg" alt="" /></div>
                                 <div className="w-[150px] h-[150px] bg-[#C4C4C4] rounded-[100%] overflow-hidden"><img className="opacity-0 hover:opacity-100 transition-opacity" src="public\team\img2.jpg" alt="" /></div>

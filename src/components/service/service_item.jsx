@@ -62,9 +62,9 @@ export function Service_block() {
                     <li key={e.id} className="border-[1px] border-white rounded-[10px] overflow-hidden animated">
                         <div className="pt-[20px] px-[20px] text-white">
                             <h2 className="flex space-x-5 text-h5 leading-h5 uppercase mb-[18px] whitespace-nowrap relative font-normal">{e.title}<p className="absolute right-0 flex gap-x-[128px] text-[#FFFFFF66]">{e.price}<span>{e.time}</span></p></h2>
-                            <p className={`flex gap-x-[384px] desk_text uppercase ${accord == i ? 'max-h-0 ' : 'max-h-[42px]'} text-[#FFFFFFB2] font-medium mt-[41px] mb-[35px]`}>Подходит для:<span className="w-[700px] normal-case font-normal">{e.text}</span></p>
+                            <p className={`flex gap-x-[384px] desk_text uppercase ${accord == i ? 'max-h-[0] opacity-0 my-0' : 'max-h-[42px] mt-[41px] mb-[35px]'} text-[#FFFFFFB2] font-medium animated`}>Подходит для:<span className="w-[700px] normal-case font-normal">{e.text}</span></p>
                         </div>
-                        <ul className={`bg-white text-black flex ${accord == i ? 'max-h-[825px] opacity-100' : 'max-h-0 opacity-0 z-[-1]'}`}>
+                        <ul className={`bg-white text-black flex ${accord == i ? 'max-h-[825px] opacity-100' : 'max-h-0 opacity-0 z-[-1]'} animated`}>
                             <li className="w-[650px] border-r-[1px] border-[#00000033] text-center">
                                 <h3 className="text-h2 leading-h2 uppercase mx-auto tracking-[-3px] font-medium py-[40px]">Подход</h3>
                                 <ul>
@@ -133,7 +133,7 @@ export function Service_block() {
                                 </div>
                             </li>
                         </ul>
-                        <button onClick={() => toggle(i)} className={`flex items-center justify-center gap-x-[10px] z-[3] uppercase w-full pt-[22px] pb-[18px] border-t-[1px] ${accord == i ? 'border-[#00000033] text-black bg-white' : 'border-white text-white bg-black'} text-h7 leading-h7 font-medium`}>Закрыть<img className="w-[15px] h-[15px]" src={accord == i ? `public/main page/icons/x.svg` : 'public/main page/icons/+_wh.svg'}/></button>
+                        <button onClick={() => toggle(i)} className={`flex items-center justify-center gap-x-[10px] z-[3] relative uppercase w-full pt-[22px] pb-[18px] border-t-[1px] ${accord == i ? 'border-[#00000033] text-black bg-white' : 'border-white text-white bg-black'} text-h7 leading-h7 font-medium`}>Закрыть<img className="w-[15px] h-[15px]" src={accord == i ? `public/main page/icons/x.svg` : 'public/main page/icons/+_wh.svg'}/></button>
                     </li>
                 ))}
             </ul>

@@ -15,7 +15,7 @@ export function Header( {title, title2, title3, year, desk, kind1, kind2, img1='
                 <img className="absolute top-0 left-[778px] fill-[#D6CFCA]" src={img2} alt="" />
                 <img className="absolute top-[418px] left-[286px] fill-[#D6CFCA]" src={img3} alt="" />
                 <h1 className='font-medium text-h1 leading-h1 my-auto mx-auto text-white mix-blend-difference'>{title} <br /><span className="ml-[137px]">{title2}</span> <br /><span className="ml-[-100px]">{title3}</span></h1>
-                <a href="#" className='absolute right-[80px] top-[325px] border-[0.5px] border-black rounded-[100%] flex items-center justify-center px-[18px] py-[78px] w-[170px] h-[170px] text-h9 leading-h9 whitespace-nowrap'><p href="#" className="bt_line relative pb-[2px]">Перейти на сайт</p></a>
+                <Link to='/' className='absolute right-[80px] top-[325px] border-[0.5px] border-black rounded-[100%] flex items-center justify-center px-[18px] py-[78px] w-[170px] h-[170px] text-h9 leading-h9 whitespace-nowrap'><p href="#" className="bt_line relative pb-[2px]">Перейти на сайт</p></Link>
                 <div className="absolute bottom-[70px]">
                     <div className='mt-[266px] w-[1280px] text-white mix-blend-difference font-medium'>
                         <p className='text-right'>{kind1}</p>
