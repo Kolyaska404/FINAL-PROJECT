@@ -64,7 +64,7 @@ export function Accord() {
                             <h2 className={`flex space-x-5 text-h7 leading-h7 ${accord == i ? 'text-black' : 'text-white'} uppercase mb-[20px] whitespace-nowrap relative`}>{block.title}<p className={`absolute right-0 flex gap-x-[53px] ${accord ==i ? 'text-[#00000066]' : 'text-[#FFFFFF66]'} `}>{block.price}<span>{block.days}</span></p></h2>
                             <p className={`text-h8 leading-h8 ${accord == i ? 'text-black' : 'text-[#FFFFFFB2]'}`}>{block.text}</p>
                         </div>
-                        <button onClick={() => (toggle(i), setOpen(!open))} className={`btn_animated flex items-center justify-center gap-x-[10px] uppercase w-full py-[21px] border-t-[1px] ${accord == i ? 'border-[#00000033] text-black' : 'border-white text-white' } text-h7 leading-h7`}>Этапы работ <img className="w-[15px] h-[15px]" src={accord == i ? 'public/main page/icons/x.svg' : 'public/main page/icons/+_wh.svg'}/></button>
+                        <button onClick={() => (toggle(i), setOpen(!open))} className={`btn_animated hover:bg-[#D2FE67] flex items-center justify-center gap-x-[10px] uppercase w-full py-[21px] border-t-[1px] ${accord == i ? 'border-[#00000033] text-black' : 'border-white text-white' } text-h7 leading-h7`}>Этапы работ <img className="w-[15px] h-[15px]" src={accord == i ? 'public/main page/icons/x.svg' : 'public/main page/icons/+_wh.svg'}/></button>
                     </li>
                 ))}
             </ul>
