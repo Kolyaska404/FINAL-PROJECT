@@ -6,7 +6,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/marsel.png',
         name: 'Marsel',
         year: '2021',
-        link: '/Marsel'
+        link: '/Marsel',
+        type: 'branding'
     },
     {
         id: 1,
@@ -15,7 +16,8 @@ export const PRODUCTS = [
         img: 'public/portfolio/homyes.png',
         name: 'Homyes',
         year: '2021',
-        link: '/Homyes'
+        link: '/Homyes',
+        type: 'branding'
     },
     {
         id: 2,
@@ -24,7 +26,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/starkwood.png',
         name: 'Starkwood',
         year: '2021',
-        link: '/Starkwood'
+        link: '/Starkwood',
+        type: 'multi_page'
     },
     {
         id: 3,
@@ -33,7 +36,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/ipoteka.png',
         name: 'Vlaston',
         year: '2021',
-        link: '/Vlaston'
+        link: '/Vlaston',
+        type: 'landing'
     },
     {
         id: 4,
@@ -42,7 +46,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/xvision.png',
         name: 'XVision',
         year: '2021',
-        link: '/XVISION'
+        link: '/XVISION',
+        type: 'landing'
     },
     {
         id: 5,
@@ -51,7 +56,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/security.png',
         name: 'Global Secure Invest',
         year: '2021',
-        link: '/Security'
+        link: '/Security',
+        type: 'multi_page'
     },
     {
         id: 6,
@@ -60,7 +66,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/food.png',
         name: 'Performance Group',
         year: '2021',
-        link: '/Perf_group'
+        link: '/Perf_group',
+        type: 'multi_page'
     },
     {
         id: 7,
@@ -69,7 +76,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/furniture.png',
         name: 'Rooblook',
         year: '2021',
-        link: '/Roblook'
+        link: '/Roblook',
+        type: 'branding'
     },
     {
         id: 8,
@@ -78,7 +86,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/study.png',
         name: 'Dubai',
         year: '2021',
-        link: '/Dubai'
+        link: '/Dubai',
+        type: 'landing'
     },
     {
         id: 9,
@@ -87,7 +96,8 @@ export const PRODUCTS = [
         img: '/public/portfolio/remont.png',
         name: 'ZHK',
         year: '2021',
-        link: '/ZHK'
+        link: '/ZHK',
+        type: 'landing'
     },
     {
         id: 10,
@@ -96,6 +106,7 @@ export const PRODUCTS = [
         img: '/public/portfolio/smeta.png',
         name: 'Stroy App',
         year: '2021',
-        link: '/Stroy_app'
+        link: '/Stroy_app',
+        type: 'application'
     }
 ]

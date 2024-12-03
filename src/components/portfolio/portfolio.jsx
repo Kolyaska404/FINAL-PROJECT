@@ -2,16 +2,27 @@ import { Footer } from "/src/components/Footer.jsx"
 import { PRODUCTS } from "./products_list"
 import { useState, useEffect } from "react"
 import { Menu } from "../menu"
-import '/src/App.css'
 import { Link } from "react-router-dom"
+import '/src/App.css'
 
 export function Portfolio() {
     const [showModal, setShowModal] = useState(false)
+    const [popular, setPopular] = useState([])
+    const [filtered, setFiltered] = useState([])
+    const [active, setActive] = useState([])
     useEffect(() => {
         window.scrollTo({
             top: 0,
             behavior: "smooth"})
     }, [])
+    useEffect(() => {
+        if (active === 0) {
+            setFiltered(PRODUCTS)
+            return
+        }
+        const filtered = PRODUCTS.filter((type) => type.type.includes(active))
+        setFiltered(filtered)
+    }, [active])
     return (
         <>
             <div className='w-full flex flex-col min-h-full mx-auto relative'>
@@ -35,15 +46,15 @@ export function Portfolio() {
                     <div className="px-[80px] relative max-w-[1440px] mx-auto pb-[47px] pt-[20px] flex flex-col w-full">
                         <nav className="mb-[60px]">
                             <ul className="uppercase flex gap-x-[25px]">
-                                <li className="text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25"><a href="" className="relative headr_a">Все</a><span>(12)</span></li>
-                                <li className="text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25"><a href="" className="relative headr_a">Лендинги</a><span>(5)</span></li>
-                                <li className="text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25"><a href="" className="relative headr_a">Многостраничные сайты</a><span>(5)</span></li>
-                                <li className="text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25"><a href="" className="relative headr_a">Приложения</a><span>(1)</span></li>
-                                <li className="text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25"><a href="" className="relative headr_a">Брендинг</a><span>(3)</span></li>
+                                <li className={`text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25 ${active === 0 ? 'active' : ''}`}><button onClick={() => setActive(0)} href="" className="relative headr_a">Все</button><span>(12)</span></li>
+                                <li className={`text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25 ${active === 'landing' ? 'active' : ''}`}><button onClick={() => setActive('landing')} href="" className="relative headr_a">Лендинги</button><span>(5)</span></li>
+                                <li className={`text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25 ${active === 'multi_page' ? 'active' : ''}`}><button onClick={() => setActive('multi_page')} href="" className="relative headr_a">Многостраничные сайты</button><span>(5)</span></li>
+                                <li className={`text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25 ${active === 'application' ? 'active' : ''}`}><button onClick={() => setActive('application')} href="" className="relative headr_a">Приложения</button><span>(1)</span></li>
+                                <li className={`text-[#F5F5F766] flex gap-x-[10px] hover:text-white transition-colors delay-25 ${active === 'branding' ? 'active' : ''}`}><button onClick={() => setActive('branding')} href="" className="relative headr_a">Брендинг</button><span>(3)</span></li>
                             </ul>
                         </nav>
                         <ul className="grid grid-cols-2 gap-x-[20px] gap-y-[20px]">
-                            {PRODUCTS.map((block) => {
+                            {filtered.map((block) => {
                                 return (
                                     <a href="https://tailwindcss.com/docs/grid-template-columns" >
                                         <Link to={block.link} key={block.id} className='flex flex-col items-center uppercase justify-center cursor-pointer'>
