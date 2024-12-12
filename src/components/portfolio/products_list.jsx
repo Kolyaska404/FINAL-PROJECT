@@ -7,7 +7,7 @@ export const PRODUCTS = [
         name: 'Marsel',
         year: '2021',
         link: '/Marsel',
-        type: 'branding'
+        type: 'branding landing'
     },
     {
         id: 1,
@@ -77,7 +77,7 @@ export const PRODUCTS = [
         name: 'Rooblook',
         year: '2021',
         link: '/Roblook',
-        type: 'branding'
+        type: 'branding multi_page'
     },
     {
         id: 8,
@@ -87,7 +87,7 @@ export const PRODUCTS = [
         name: 'Dubai',
         year: '2021',
         link: '/Dubai',
-        type: 'landing'
+        type: 'landing '
     },
     {
         id: 9,
@@ -97,7 +97,7 @@ export const PRODUCTS = [
         name: 'ZHK',
         year: '2021',
         link: '/ZHK',
-        type: 'landing'
+        type: 'landing '
     },
     {
         id: 10,
@@ -107,6 +107,6 @@ export const PRODUCTS = [
         name: 'Stroy App',
         year: '2021',
         link: '/Stroy_app',
-        type: 'application'
+        type: 'application multi_page'
     }
 ]

@@ -22,7 +22,7 @@ export function Menu({ closeModal }) {
                     <img src={over ? hover : nhover} alt=""/>
                     ЗАКРЫТЬ
                 </button>
-                <button className="hover:bg-gr hover:border-transparent hover:text-black active:bg-sal active:text-[#00000099] transition-all delay-25 z-10 uppercase px-[15px] py-[5.5px] rounded-[100px] border-[1px] border-white text-h9 leading-h9">Заполнить бриф</button>
+                <Link to='/breef' className="hover:bg-gr hover:border-transparent hover:text-black active:bg-sal active:text-[#00000099] transition-all delay-25 z-10 uppercase px-[15px] py-[5.5px] rounded-[100px] border-[1px] border-white text-h9 leading-h9">Заполнить бриф</Link>
             </nav>
             <ul className="flex gap-x-[184px]">
                 <li>

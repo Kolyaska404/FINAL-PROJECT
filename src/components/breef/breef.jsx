@@ -7,11 +7,46 @@ export function Breef() {
     const nhover  = 'public/main page/icons/mn_wh_icn.svg'
     const hover = 'public/main page/icons/mn_icn.svg'
     const [showModal, setShowModal] = useState(false)
+    const [service, setService] = useState('')
+    const [kind, setKind] = useState('')
+    const [goal, setGoal] = useState('')
+    const [pages, setPages] = useState('')
+    const [functional, setFunctional] = useState('')
+    const [budget, setBudget] = useState('')
+    const [material, setMaterial] = useState('')
+    const [url, setUrl] = useState('')
+    const [yes_no, setYes_no] = useState('')
+    const [username, setusername] = useState('')
+    const [marketName, setMarketName] = useState('')
+    const [phone, setphone] = useState('')
     useEffect(() => {
         window.scrollTo({
             top: 0,
             behavior: "smooth"})
     }, [])
+    const handlesubmit = async (event) => {
+        event.preventDefault()
+        const formData = { service, kind, goal, pages, functional, budget, material }
+
+        try {
+            const response = await fetch('http://localhost:8000/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                alert('Data sended successfuly')
+            } else {
+                alert('Data dont sended')
+            }
+        } catch (error){
+            alert('Error:', error);
+        }
+    }
+    console.log(service)
     return (
         <>
             <div className='w-full flex flex-col min-h-full mx-auto relative bg-black'>
@@ -41,276 +76,272 @@ export function Breef() {
                 </header>
                 <main>
                     <section className="conteiner pt-[80px] pb-[150px]">
-                        <ul className="flex flex-col gap-y-[80px]">
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                        <form onSubmit={handlesubmit} className="flex flex-col gap-y-[80px]">
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">01</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex gap-x-[164px] mb-[60px]">Выберите<span>услугу?</span></h3>
-                                    <ul className="flex flex-col gap-y-[30px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex gap-x-[164px] mb-[60px]">Выберите<span>услугу?</span></label>
+                                    <ul className="flex flex-col gap-y-[30px] ">
                                         <li className="flex gap-x-[30px]">
-                                            <button type="choose" className="hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн лендинга</button>
-                                            <button type="choose" className="hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн многостраничного сайта</button>
-                                            <button type="choose" className="hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн интернет магазина</button>
+                                            <button type='button' onChange={(e) => setService(e.target.value)} value={service} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн лендинга</button>
+                                            <button type='button' onChange={(e) => setService(e.target.value)} value={service} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн многостраничного сайта</button>
+                                            <button type='button' onChange={(e) => setService(e.target.value)} value={service} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн интернет магазина</button>
                                         </li>
                                         <li className="flex gap-x-[30px]">
-                                            <button type="choose" className="hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн новостного сайта / Блога</button>
-                                            <button type="choose" className="hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн приложения</button>
-                                            <button type="choose" className="hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Брендинг</button>
+                                            <button type='button' onChange={(e) => setService(e.target.value)} value={service} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн новостного сайта / Блога</button>
+                                            <button type='button' onChange={(e) => setService(e.target.value)} value={service} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн приложения</button>
+                                            <button type='button' onChange={(e) => setService(e.target.value)} value={service} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Брендинг</button>
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                            </div>
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">02</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex flex-col mb-[60px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex flex-col ">
                                         Чем Занимается
                                         <span className="flex gap-x-[88px] ml-[90px]">Ваша<span>компания?</span></span>
-                                    </h3>
-                                    <form action="">
-                                        <input type="text" placeholder="Строительство, продажа товаров, услуги..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
-                                    </form>
+                                    </label>
+                                    <input onChange={(e) => setKind(e.target.value)} value={kind} type="text" placeholder="Строительство, продажа товаров, услуги..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px] mt-[60px]" />
                                 </div>
-                            </li>
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                            </div>
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">03</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex flex-col mb-[60px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex flex-col mb-[60px]">
                                         <span className="flex gap-x-[129px]">Какая <span>цель</span></span>
                                         <span className="ml-[489px]">сайта?</span>
-                                    </h3>
+                                    </label>
                                     <ul className="flex gap-x-[69px] desk_text font-normal">
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='check_1'/>
+                                                <input value={goal} onChange={(e) => setGoal(e.target.value)} type="checkbox" className="checkbox-input" id='check_1'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_1">Привлечение новой аудитории</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='check_2'/>
+                                                <input value={goal} onChange={(e) => setGoal(e.target.value)} type="checkbox" className="checkbox-input" id='check_2'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_2">Увеличение конверсии</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='check_3'/>
+                                                <input value={goal} onChange={(e) => setGoal(e.target.value)} type="checkbox" className="checkbox-input" id='check_3'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_3">Увеличение продаж</label>
                                             </div>
                                         </li>
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='check_4'/>
+                                                <input value={goal} onChange={(e) => setGoal(e.target.value)} type="checkbox" className="checkbox-input" id='check_4'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_4">Повышение имиджа</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='check_5'/>
+                                                <input value={goal} onChange={(e) => setGoal(e.target.value)} type="checkbox" className="checkbox-input" id='check_5'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_5">Информирование пользователей</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='check_6'/>
+                                                <input value={goal} onChange={(e) => setGoal(e.target.value)} type="checkbox" className="checkbox-input" id='check_6'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_6">Увеличение вовлеченности</label>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                            </div>
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">04</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase mb-[30px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase">
                                         <span className="flex gap-x-[123px]">Какие<span>страницы</span></span>
                                         <span className="flex gap-x-[70px]">вы<span>хотите</span><span>видеть?</span></span>
-                                    </h3>
-                                    <p className="font-normal mb-[60px] leading-h7 tracking-[-1px] text-[#FFFFFF66]">Если вы не знаете, можете пропустить, вы вам поможем определиться в процессе работы</p>
+                                    </label>
+                                    <p className="font-normal mt-[30px] mb-[60px] leading-h7 tracking-[-1px] text-[#FFFFFF66]">Если вы не знаете, можете пропустить, вы вам поможем определиться в процессе работы</p>
                                     <form action="">
-                                        <input type="text" placeholder="Блог, каталог, о компании..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
+                                        <input onChange={(e) => setPages(e.target.value)} value={pages} type="text" placeholder="Блог, каталог, о компании..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
                                     </form>
                                 </div>
-                            </li>
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                            </div>
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">05</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase mb-[60px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase">
                                         <span className="flex gap-x-[95px]">Какой<span>функционал</span></span>
                                         <span className="ml-[305px]">нужен?</span>
-                                    </h3>
-                                    <ul className="flex gap-x-[155px] desk_text font-normal">
+                                    </label>
+                                    <ul className="flex gap-x-[155px] desk_text font-normal mt-[60px]">
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_1'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_1'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_1">Форма для заявок</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_2'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_2'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_2">Квиз</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_3'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_3'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_3">Корзина</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_4'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_4'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_4">Платежная система</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_5'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_5'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_5">Фильтрация</label>
                                             </div>
                                         </li>
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_6'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_6'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_6">Личный кабинет</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_7'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_7'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_7">Комментарии</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_8'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_8'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_8">Поиск</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='func_9'/>
+                                                <input value={functional} onChange={(e) => setFunctional(e.target.value)} type="checkbox" className="checkbox-input" id='func_9'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_9">Не знаю, нужна помощь</label>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                            </div>
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">06</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase mb-[60px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase">
                                         <span className="flex gap-x-[95px]">Какой<span>допустимый</span></span>
                                         <span className="ml-[151px]">бюджет?</span>
-                                    </h3>
-                                    <ul className="flex gap-x-[69px] desk_text font-normal">
+                                    </label>
+                                    <ul className="flex gap-x-[69px] desk_text font-normal mt-[60px]">
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="radio" name="radio1" className="radio-input" id='ratio_1'/>
+                                                <input value={budget} onChange={(e) => setBudget(e.target.value)} type="radio" name="radio1" className="radio-input" id='ratio_1'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_1">&lt;100 тыс. ₽</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="radio" name="radio1" className="radio-input" id='ratio_2'/>
+                                                <input value={budget} onChange={(e) => setBudget(e.target.value)} type="radio" name="radio1" className="radio-input" id='ratio_2'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_2">100 - 500 тыс. ₽</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="radio" name="radio1" className="radio-input" id='ratio_3'/>
+                                                <input value={budget} onChange={(e) => setBudget(e.target.value)} type="radio" name="radio1" className="radio-input" id='ratio_3'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_3">500 тыс. - 1млн. ₽</label>
                                             </div>
                                         </li>
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="radio" name="radio1" className="radio-input" id='ratio_4'/>
+                                                <input value={budget} onChange={(e) => setBudget(e.target.value)} type="radio" name="radio1" className="radio-input" id='ratio_4'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_4">1 - 3 млн. ₽</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="radio" name="radio1" className="radio-input" id='ratio_5'/>
+                                                <input value={budget} onChange={(e) => setBudget(e.target.value)} type="radio" name="radio1" className="radio-input" id='ratio_5'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_5">&gt;3 млн. ₽</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="radio" name="radio1" className="radio-input" id='ratio_6'/>
+                                                <input value={budget} onChange={(e) => setBudget(e.target.value)} type="radio" name="radio1" className="radio-input" id='ratio_6'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_6">Не знаю, но ваши цены меня устраивают</label>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                            </div>
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">07</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase mb-[60px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase">
                                         <span className="flex gap-x-[123px]"><span>Какие </span>материалы </span>
                                         <span><span className="mr-[39px]">для</span>сайта<span className="ml-[185px]">есть?</span></span>
-                                    </h3>
-                                    <ul className="flex gap-x-[155px] desk_text font-normal">
+                                    </label>
+                                    <ul className="flex gap-x-[155px] desk_text font-normal mt-[60px]">
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_1'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_1'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_1">Логотип</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_2'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_2'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_2">Фирменный стиль</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_3'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_3'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_3">Наброски текста</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_4'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_4'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_4">Текст для всех страниц</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_5'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_5'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_5">Сайт</label>
                                             </div>
                                         </li>
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_6'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_6'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_6">Презентации</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_7'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_7'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_7">Фото / Видео</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_8'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_8'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_8">Прототип сайта</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input type="checkbox" className="checkbox-input" id='material_9'/>
+                                                <input value={material} onChange={(e) => setMaterial(e.target.value)} type="checkbox" className="checkbox-input" id='material_9'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_9">Ничего, материалы в плохом качестве</label>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                            </div>
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">08</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase mb-[30px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase">
                                         <span className="flex gap-x-[69px]">Ссылка<span>на </span></span>
                                         <span className="ml-[160px] flex gap-x-[94px]">текущий<span>сайт</span></span>
-                                    </h3>
-                                    <p className="font-normal mb-[60px] leading-h7 tracking-[-1px] text-[#FFFFFF66]">Если нет сайта, оставьте поле пустым</p>
-                                    <form action="">
-                                        <input type="text" placeholder="Ссылка..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
-                                    </form>
+                                    </label>
+                                    <p className="font-normal  mt-[30px] mb-[60px] leading-h7 tracking-[-1px] text-[#FFFFFF66]">Если нет сайта, оставьте поле пустым</p>
+                                    <input value={url} onChange={(e) => setUrl(e.target.value)} type="text" placeholder="Ссылка..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
                                 </div>
-                            </li>
-                            <li className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
+                            </div>
+                            <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">09</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase mb-[60px]">
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase">
                                         <span className="flex gap-x-[289px]">Есть<span>примеры</span></span>
                                         <span className="flex gap-x-[143px]">желаемого<span>Стиля</span></span>
                                         <span className="ml-[330px]">сайта?</span>
-                                    </h3>
-                                    <ul className="flex gap-x-[155px]">
+                                    </label>
+                                    <ul className="flex gap-x-[155px]  mt-[60px]">
                                         <li className="flex gap-x-[10px] items-center">
-                                            <input type="radio" name="yes_no" className="radio-input" id='yes_no_1'/>
+                                            <input value={yes_no} onChange={(e) => setYes_no(e.target.value)} type="radio" name="yes_no" className="radio-input" id='yes_no_1'/>
                                             <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="yes_no_1">Да, есть референсы</label>
                                         </li>
                                         <li className="flex gap-x-[10px] items-center">
-                                            <input type="radio" name="yes_no" className="radio-input" id='yes_no_2'/>
+                                            <input value={yes_no} onChange={(e) => setYes_no(e.target.value)} type="radio" name="yes_no" className="radio-input" id='yes_no_2'/>
                                             <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="yes_no_2">Нет, нужна помощь</label>
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li className="pb-[80px] flex justify-between">
+                            </div>
+                            <div className="pb-[80px] flex justify-between">
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">10</h2>
                                 <div className="w-[720px]">
-                                    <h3 className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex gap-x-[225px] mb-[60px]">Ваши<span>контакты</span></h3>
-                                    <form action="" className="w-full flex flex-col gap-y-[40px]">
-                                        <input type="text" placeholder="Имя*" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
-                                        <input type="text" placeholder="Название компании" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
-                                        <input type="text" placeholder="Телефон*" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
-                                        <button className="py-[21px] border-[0.5px] border-[#FFFFFF] rounded-[100px] uppercase font-normal leading-[18px]">Отправить</button>
-                                    </form>
+                                    <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex gap-x-[225px] mb-[60px]">Ваши<span>контакты</span></label>
+                                    <div className="w-full flex flex-col gap-y-[40px]">
+                                        <input value={username} onChange={(e) => setusername(e.target.value)} type="text" placeholder="Имя*" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
+                                        <input value={marketName} onChange={(e) => setMarketName(e.target.value)} type="url" placeholder="Название компании" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
+                                        <input value={phone} onChange={(e) => setphone(e.target.value)} type="tel" placeholder="Телефон*" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
+                                        <button type="submit" className="py-[21px] border-[0.5px] border-[#FFFFFF] rounded-[100px] uppercase font-normal leading-[18px]">Отправить</button>
+                                    </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </form>
                     </section>
                 </main>
             </div>
