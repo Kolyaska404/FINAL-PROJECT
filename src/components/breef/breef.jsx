@@ -1,49 +1,46 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Menu } from '../menu'
-import '/src/App.css'
+import { Menu } from '../menu';
+import axios from 'axios';
+import '/src/App.css';
 export function Breef() {
     const [over, setOver] = useState(false);
     const nhover  = 'public/main page/icons/mn_wh_icn.svg'
     const hover = 'public/main page/icons/mn_icn.svg'
     const [showModal, setShowModal] = useState(false)
-    const [service, setService] = useState('')
-    const [kind, setKind] = useState('')
-    const [goal, setGoal] = useState('')
-    const [pages, setPages] = useState('')
-    const [functional, setFunctional] = useState('')
-    const [budget, setBudget] = useState('')
-    const [material, setMaterial] = useState('')
-    const [url, setUrl] = useState('')
-    const [yes_no, setYes_no] = useState('')
-    const [username, setusername] = useState('')
-    const [marketName, setMarketName] = useState('')
-    const [phone, setphone] = useState('')
+    const [formData, setFormData] = useState({
+        service: '',
+        kind: '',
+        goal: '',
+        pages: '',
+        functional: '',
+        budget: '',
+        material: '',
+        url: '',
+        yes_no: '',
+        username: '',
+        marketName: '',
+        phone: ''
+    })
     useEffect(() => {
         window.scrollTo({
             top: 0,
             behavior: "smooth"})
     }, [])
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    }
     const handlesubmit = async (event) => {
-        event.preventDefault()
-        const formData = { service, kind, goal, pages, functional, budget, material }
-
+        event.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-
-            if (response.ok) {
-                alert('Data sended successfuly')
-            } else {
-                alert('Data dont sended')
-            }
-        } catch (error){
-            alert('Error:', error);
+            const response = await axios.post('http://localhost:5000/submit', formData);
+            alert(response.data.message)
+        } catch (error) {
+            alert('Error while sending: ' + error.message)
         }
     }
     console.log(service)
