@@ -23,6 +23,40 @@ export function Breef() {
         marketName: '',
         phone: ''
     })
+    const btn_list = [
+        {   
+            id: 1,
+            text: 'Дизайн лендинга'
+        },
+        {   
+            id: 2,
+            text: 'Дизайн многостраничного сайта'
+        },
+        {   
+            id: 3,
+            text: 'Дизайн интернет магазина'
+        },
+        {   
+            id: 4,
+            text: 'Дизайн новостного сайта / Блога'
+        },
+        {   
+            id: 5,
+            text: 'Дизайн приложения'
+        },
+        {   
+            id: 6,
+            text: 'Брендинг'
+        },
+    ]
+    const [open, setOpen] = useState(false)
+    const [btn_bg, setBtn_bg] = useState(null)
+    const toggle = (i) => {
+        if (btn_bg == i) {
+            return setBtn_bg(null)
+        }
+        setBtn_bg(i)
+    }
     useEffect(() => {
         window.scrollTo({
             top: 0,
@@ -40,11 +74,11 @@ export function Breef() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4200/submit', formData);
+            const response = await axios.post('http://localhost:4200/api/forms', formData);
             console.log(response.data);
             alert('Form submitted successfully!');
         } catch (error) {
-            console.error('There was an error submitting the form!', error);
+            alert('There was an error submitting the form!', error);
         }
     };
 
@@ -82,17 +116,10 @@ export function Breef() {
                                 <h2 className="text-h4 leading-h4 font-normal tracking-[-2px]">01</h2>
                                 <div className="w-[720px]">
                                     <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex gap-x-[164px] mb-[60px]">Выберите<span>услугу?</span></label>
-                                    <ul className="flex flex-col gap-y-[30px] ">
-                                        <li className="flex gap-x-[30px]">
-                                            <button type='button' onChange={handleChange} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн лендинга</button>
-                                            <button type='button' onChange={handleChange} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн многостраничного сайта</button>
-                                            <button type='button' onChange={handleChange} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн интернет магазина</button>
-                                        </li>
-                                        <li className="flex gap-x-[30px]">
-                                            <button type='button' onChange={handleChange} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн новостного сайта / Блога</button>
-                                            <button type='button' onChange={handleChange} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Дизайн приложения</button>
-                                            <button type='button' onChange={handleChange} className="cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] focus:bg-[#D2FE67] focus:text-black transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]">Брендинг</button>
-                                        </li>
+                                    <ul className="grid grid-cols-3 grid-rows-2 gap-y-[30px] ">
+                                        {btn_list.map((e, i) => 
+                                            (<button type='button' key={e.id} onClick={() => (toggle(i), setOpen(!open))} onChange={handleChange} className={`cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] ${btn_bg == i ? 'bg-[#D2FE67] text-black' : 'bg-black text-white'} transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]`}>{e.text}</button>)
+                                        )}
                                     </ul>
                                 </div>
                             </div>

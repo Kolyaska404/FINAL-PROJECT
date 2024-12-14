@@ -46,7 +46,7 @@ export function Acc_card() {
                 <p>100 000 ₽*</p>
             </div>
             <p className="text-h10 leading-h10 font-normal pb-[21px]">* Конечная стоимость проекта зависит объема работы, сложности задачи и сроков.</p>
-            <button className="uppercase text-h7 leading-h7 pt-[25px] border-t-[1px] border-[#00000033] w-full">Заполнить бриф</button>
+            <button className="uppercase text-h7 leading-h7 py-[25px] border-t-[1px] border-[#00000033] w-full">Заполнить бриф</button>
         </div>
     )
 }

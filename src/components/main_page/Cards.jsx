@@ -4,16 +4,7 @@ import '/src/App.css'
 export function Cards() {
     return (
         <section className="pb-[300px] flex flex-col items-center uppercase">
-            <section className='marsel_bg w-[1440px] h-[870px] flex flex-col items-center uppercase'>
-                <nav className='py-[51px]'>
-                    <ul className=" flex gap-x-[20px] text-[#FFFFFF66]">
-                        <li><a className="relative text-h8 leading-h8 headr_a hover:text-[#FFFFFF] transition-colors delay-[0.1s] ease-linear" href="">Все</a></li>
-                        <li><a className="relative text-h8 leading-h8 headr_a hover:text-[#FFFFFF] transition-colors delay-[0.1s] ease-linear" href="">Лендинги</a></li>
-                        <li><a className="relative text-h8 leading-h8 headr_a hover:text-[#FFFFFF] transition-colors delay-[0.1s] ease-linear" href="">Многостраничные сайты</a></li>
-                        <li><a className="relative text-h8 leading-h8 headr_a hover:text-[#FFFFFF] transition-colors delay-[0.1s] ease-linear" href="">Приложения</a></li>
-                        <li><a className="relative text-h8 leading-h8 headr_a hover:text-[#FFFFFF] transition-colors delay-[0.1s] ease-linear" href="">Брендинг</a></li>
-                    </ul>
-                </nav>
+            <section className='marsel_bg w-[1440px] h-[870px] pt-[80px] flex flex-col items-center uppercase'>
                 <Link to='/Marsel' className='flex flex-col items-center overflow-hidden rounded-[10px] border-[1px] border-white font-medium'>
                     <div className='flex items-center justify-between px-[17px] py-[10px] bg-black text-white w-full text-h8 leading-h8'>
                         <h3>Брендинг, Дизайн сайта</h3>
