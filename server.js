@@ -1,75 +1,52 @@
 import express from 'express';
 import mysql from 'mysql'
-// import { createConnection } from 'mysql';
-// import { json } from 'body-parser';
 import cors from 'cors';
+import mongoose from 'mongoose';
+
+mongoose.connect(
+    'mongodb+srv://admin:admin1@mydb.9kmko.mongodb.net/?retryWrites=true&w=majority&appName=mydb'
+).then(() => {
+    console.log('MongoDB is ON!')
+}).catch((err) => {
+    console.log('DB error' + err)
+})
 
 const app = express();
 app.use(cors());
+const PORT = 4200;
 
-const db = mysql.createConnection({
-    host: '127.0.0.1',
-    port: 3306,
-    database: 'my_database',
-    user: 'root',
+const formScmeha = new mongoose.Schema({
+    service: String,
+    kind: String,
+    goal: [String],
+    pages: String,
+    functional: [String],
+    budget: String,
+    material: [String],
+    url: String,
+    yes_no: String,
+    username: String,
+    marketName: String,
+    phone: String,
 })
 
-db.connect((err) => {
-    if (err) {
-        console.log(err);
-    }
-    console.log('MySQL Connected...');
-});
+const Form = mongoose.model('Form', formScmeha)
 
 async function main() {
     app.use(express.json())
-    app.post('/api/forms', (req, res) => {
-        const formData = req.body;
-        const sql = 'INSERT INTO forms SET ?'
-        db.query(sql, formData, (err, data) => {
-            if (err) {
-                return res.status(500).json({ error: err.message });
-            }
-            res.status(201).json({ id: result.insertId, message: 'Form submitted successfully' });
-        })
+    app.post('/api/forms', async (req, res) => {
+        try {
+            const formData = new Form(req.body)
+            await formData.save()
+            res.status(201).alert('Data is sending successfully')
+        } catch (err) {
+            alert.log('Error is' + err)
+        }
     })
-    app.listen(4200, () => {
+    app.listen(PORT, () => {
         console.log('Server is running on port 4200')
     })
 }
 
 main()
 
-// const db = createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'password',
-//     database: 'my_database'
-// });
-
-// db.connect((err) => {
-//     if (err) {
-//         console.log(err)
-//     }
-//     console.log('MySQL Connected...')
-// })
-
-// app.get('/', (req, res) => {
-//     return res.json('Hello world')
-// })
-
-// app.post('/api/forms', (req, res) => {
-//     const formData = req.body;
-//     const sql = 'INSERT INTO submissions SET ?';
-    
-//     db.query(sql, formData, (err, result) => {
-//         if (err) {
-//             return res.status(500).json({ error: err.message});
-//         }
-//         res.status(201).json({ id: result.insertId, message: 'Form submitted successfully' });
-//     });
-// });
-
-// app.listen(5000, () => {
-//     console.log(`Server is running on port ${PORT}`)
-// })
