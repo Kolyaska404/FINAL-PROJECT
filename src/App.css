@@ -436,3 +436,29 @@
 .active {
     color: #FFFFFF;
 }
+
+.service {
+    appearance: none;
+}
+#serv_1::before {
+    content: 'Дизайн лендинга';
+}
+#serv_2::before {
+    content: 'Дизайн многостраничного сайта';
+}
+#serv_3::before {
+    content: 'Дизайн интернет магазина';
+}
+#serv_4::before {
+    content: 'Дизайн новостного сайта / Блога';
+}
+#serv_5::before {
+    content: 'Дизайн приложения';
+}
+#serv_6::before {
+    content: 'Брендинг';
+}
+.service:checked {
+    background-color: #D2FE67;
+    color: #000000;
+}
