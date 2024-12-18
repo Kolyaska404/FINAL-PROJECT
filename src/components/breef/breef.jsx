@@ -66,8 +66,8 @@ export function Breef() {
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData({ 
-            ...formData, 
-            [name]: type === 'checkbox' ? checked : value 
+            ...formData,
+            [name]: type === 'checkbox' ? checked : value,
         });
     };
 
@@ -130,9 +130,12 @@ export function Breef() {
                                 <div className="w-[720px]">
                                     <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex gap-x-[164px] mb-[60px]">Выберите<span>услугу?</span></label>
                                     <ul className="grid grid-cols-3 grid-rows-2 gap-y-[30px] ">
-                                        {btn_list.map((e, i) => 
-                                            (<button type='button' key={e.id} onClick={() => (toggle(i), setOpen(!open))} onChange={handleChange} className={`cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] ${btn_bg == i ? 'bg-[#D2FE67] text-black' : 'bg-black text-white'} transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]`}>{e.text}</button>)
-                                        )}
+                                        <input type='hidden' name="service" placeholder='Дизайн лендинга' checked={formData.service === 'Дизайн лендинга'} value='Дизайн лендинга' onChange={handleChange} className={`cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]`}></input>
+                                        <input type='button' name="service" placeholder='Дизайн лендинга' checked={formData.service === 'Дизайн лендинга'} value='Дизайн лендинга' onChange={handleChange} className={`cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]`}></input>
+                                        <input type='button' name="service" placeholder='Дизайн лендинга' checked={formData.service === 'Дизайн лендинга'} value='Дизайн лендинга' onChange={handleChange} className={`cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]`}></input>
+                                        <input type='button' name="service" placeholder='Дизайн лендинга' checked={formData.service === 'Дизайн лендинга'} value='Дизайн лендинга' onChange={handleChange} className={`cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]`}></input>
+                                        <input type='button' name="service" placeholder='Дизайн лендинга' checked={formData.service === 'Дизайн лендинга'} value='Дизайн лендинга' onChange={handleChange} className={`cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]`}></input>
+                                        <input type='button' name="service" placeholder='Дизайн лендинга' checked={formData.service === 'Дизайн лендинга'} value='Дизайн лендинга' onChange={handleChange} className={`cursor-pointer hover:text-black hover:bg-[#D2FE67] active:text-[#00000099] active:bg-[#DDFE8D] transition-colors flex w-[220px] h-[220px] rounded-[100%] justify-center items-center border-[0.5px] border-white text-center underline uppercase font-medium text-h9 leading-[15px] px-[20px]`}></input>
                                     </ul>
                                 </div>
                             </div>
@@ -143,7 +146,7 @@ export function Breef() {
                                         Чем Занимается
                                         <span className="flex gap-x-[88px] ml-[90px]">Ваша<span>компания?</span></span>
                                     </label>
-                                    <input onChange={handleChange} type="text" placeholder="Строительство, продажа товаров, услуги..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px] mt-[60px]" />
+                                    <input onChange={handleChange} name="kind" type="text" placeholder="Строительство, продажа товаров, услуги..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px] mt-[60px]" />
                                 </div>
                             </div>
                             <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
@@ -156,29 +159,29 @@ export function Breef() {
                                     <ul className="flex gap-x-[69px] desk_text font-normal">
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='check_1'/>
+                                                <input onChange={checkboxHandleChange} value='Привлечение новой аудитории' name="goal" type="checkbox" className="checkbox-input" id='check_1'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_1">Привлечение новой аудитории</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='check_2'/>
+                                                <input onChange={checkboxHandleChange} value='Увеличение конверсии' name="goal" type="checkbox" className="checkbox-input" id='check_2'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_2">Увеличение конверсии</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='check_3'/>
+                                                <input onChange={checkboxHandleChange} value='Увеличение продаж' name="goal" type="checkbox" className="checkbox-input" id='check_3'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_3">Увеличение продаж</label>
                                             </div>
                                         </li>
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='check_4'/>
+                                                <input onChange={checkboxHandleChange} value='Повышение имиджа' name="goal" type="checkbox" className="checkbox-input" id='check_4'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_4">Повышение имиджа</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='check_5'/>
+                                                <input onChange={checkboxHandleChange} value='Информирование пользователей' name="goal" type="checkbox" className="checkbox-input" id='check_5'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_5">Информирование пользователей</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='check_6'/>
+                                                <input onChange={checkboxHandleChange} value='Увеличение вовлеченности' name="goal" type="checkbox" className="checkbox-input" id='check_6'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="check_6">Увеличение вовлеченности</label>
                                             </div>
                                         </li>
@@ -194,7 +197,7 @@ export function Breef() {
                                     </label>
                                     <p className="font-normal mt-[30px] mb-[60px] leading-h7 tracking-[-1px] text-[#FFFFFF66]">Если вы не знаете, можете пропустить, вы вам поможем определиться в процессе работы</p>
                                     <form action="">
-                                        <input onChange={handleChange} type="text" placeholder="Блог, каталог, о компании..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
+                                        <input onChange={handleChange} name="pages" type="text" placeholder="Блог, каталог, о компании..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
                                     </form>
                                 </div>
                             </div>
@@ -208,41 +211,41 @@ export function Breef() {
                                     <ul className="flex gap-x-[155px] desk_text font-normal mt-[60px]">
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_1'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_1'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_1">Форма для заявок</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_2'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_2'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_2">Квиз</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_3'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_3'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_3">Корзина</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_4'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_4'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_4">Платежная система</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_5'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_5'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_5">Фильтрация</label>
                                             </div>
                                         </li>
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_6'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_6'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_6">Личный кабинет</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_7'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_7'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_7">Комментарии</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_8'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_8'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_8">Поиск</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='func_9'/>
+                                                <input onChange={checkboxHandleChange} name="functional" type="checkbox" className="checkbox-input" id='func_9'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="func_9">Не знаю, нужна помощь</label>
                                             </div>
                                         </li>
@@ -259,29 +262,29 @@ export function Breef() {
                                     <ul className="flex gap-x-[69px] desk_text font-normal mt-[60px]">
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={handleChange} type="radio" name="radio1" className="radio-input" id='ratio_1'/>
+                                                <input onChange={handleChange} checked={formData.budget === '100 тыс. ₽'} value='100 тыс. ₽' type="radio" name="budget" className="radio-input" id='ratio_1'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_1">&lt;100 тыс. ₽</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={handleChange} type="radio" name="radio1" className="radio-input" id='ratio_2'/>
+                                                <input onChange={handleChange} checked={formData.budget === '100 - 500 тыс. ₽'} value='100 - 500 тыс. ₽' type="radio" name="budget" className="radio-input" id='ratio_2'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_2">100 - 500 тыс. ₽</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={handleChange} type="radio" name="radio1" className="radio-input" id='ratio_3'/>
+                                                <input onChange={handleChange} checked={formData.budget === '500 тыс. - 1млн. ₽'} value='500 тыс. - 1млн. ₽' type="radio" name="budget" className="radio-input" id='ratio_3'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_3">500 тыс. - 1млн. ₽</label>
                                             </div>
                                         </li>
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={handleChange} type="radio" name="radio1" className="radio-input" id='ratio_4'/>
+                                                <input onChange={handleChange} checked={formData.budget === '1 - 3 млн. ₽'} value='1 - 3 млн. ₽' type="radio" name="budget" className="radio-input" id='ratio_4'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_4">1 - 3 млн. ₽</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={handleChange} type="radio" name="radio1" className="radio-input" id='ratio_5'/>
+                                                <input onChange={handleChange} checked={formData.budget === '3 млн. ₽'} value='3 млн. ₽' type="radio" name="budget" className="radio-input" id='ratio_5'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_5">&gt;3 млн. ₽</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={handleChange} type="radio" name="radio1" className="radio-input" id='ratio_6'/>
+                                                <input onChange={handleChange} checked={formData.budget === 'Не знаю, но ваши цены меня устраивают'} value='Не знаю, но ваши цены меня устраивают' type="radio" name="budget" className="radio-input" id='ratio_6'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="ratio_6">Не знаю, но ваши цены меня устраивают</label>
                                             </div>
                                         </li>
@@ -298,41 +301,41 @@ export function Breef() {
                                     <ul className="flex gap-x-[155px] desk_text font-normal mt-[60px]">
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_1'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_1'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_1">Логотип</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_2'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_2'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_2">Фирменный стиль</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_3'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_3'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_3">Наброски текста</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_4'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_4'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_4">Текст для всех страниц</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_5'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_5'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_5">Сайт</label>
                                             </div>
                                         </li>
                                         <li className="flex flex-col gap-y-[15px]">
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_6'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_6'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_6">Презентации</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_7'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_7'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_7">Фото / Видео</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_8'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_8'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_8">Прототип сайта</label>
                                             </div>
                                             <div className="flex gap-x-[10px] items-center hover:text-[#D2FE67] active:text-[#DDFE8D] checked:text-[#D2FE67] transition-colors">
-                                                <input onChange={checkboxHandleChange} type="checkbox" className="checkbox-input" id='material_9'/>
+                                                <input onChange={checkboxHandleChange} name="material" type="checkbox" className="checkbox-input" id='material_9'/>
                                                 <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="material_9">Ничего, материалы в плохом качестве</label>
                                             </div>
                                         </li>
@@ -347,7 +350,7 @@ export function Breef() {
                                         <span className="ml-[160px] flex gap-x-[94px]">текущий<span>сайт</span></span>
                                     </label>
                                     <p className="font-normal  mt-[30px] mb-[60px] leading-h7 tracking-[-1px] text-[#FFFFFF66]">Если нет сайта, оставьте поле пустым</p>
-                                    <input onChange={handleChange} type="text" placeholder="Ссылка..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
+                                    <input onChange={handleChange} name="url" type="url" placeholder="Ссылка..." className="inputt border-b-[1px] border-[#FFFFFF33] outline-none w-full bg-transparent pb-[15px] text-[30px] leading-[36px]" />
                                 </div>
                             </div>
                             <div className="border-b-[1px] border-[#FFFFFF33] pb-[80px] flex justify-between">
@@ -360,11 +363,11 @@ export function Breef() {
                                     </label>
                                     <ul className="flex gap-x-[155px]  mt-[60px]">
                                         <li className="flex gap-x-[10px] items-center">
-                                            <input onChange={handleChange} type="radio" name="yes_no" className="radio-input" id='yes_no_1'/>
+                                            <input onChange={handleChange} type="radio" checked={formData.yes_no === 'Да, есть референсы'} value='Да, есть референсы' name="yes_no" className="radio-input" id='yes_no_1'/>
                                             <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="yes_no_1">Да, есть референсы</label>
                                         </li>
                                         <li className="flex gap-x-[10px] items-center">
-                                            <input onChange={handleChange} type="radio" name="yes_no" className="radio-input" id='yes_no_2'/>
+                                            <input onChange={handleChange} type="radio" checked={formData.yes_no === 'Нет, нужна помощь'} value='Нет, нужна помощь' name="yes_no" className="radio-input" id='yes_no_2'/>
                                             <label className="hover:text-[#D2FE67] active:text-[#DDFE8D] focus:text-[#D2FE67] transition-colors" htmlFor="yes_no_2">Нет, нужна помощь</label>
                                         </li>
                                     </ul>
@@ -375,9 +378,9 @@ export function Breef() {
                                 <div className="w-[720px]">
                                     <label className="text-h4 leading-h4 font-medium tracking-[-2px] uppercase flex gap-x-[225px] mb-[60px]">Ваши<span>контакты</span></label>
                                     <div className="w-full flex flex-col gap-y-[40px]">
-                                        <input onChange={handleChange} type="text" placeholder="Имя*" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
-                                        <input onChange={handleChange} type="url" placeholder="Название компании" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
-                                        <input onChange={handleChange} type="tel" placeholder="Телефон*" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
+                                        <input onChange={handleChange} type="text" name="username" placeholder="Имя*" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
+                                        <input onChange={handleChange} type="text" name="marketName" placeholder="Название компании" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
+                                        <input onChange={handleChange} type="tel" name="phone" placeholder="Телефон*" className="inputt border-b-[1px] border-[#FFFFFF33] text-[30px] leading-[36px] tracking-[-1px] pb-[15px] bg-transparent text-dec outline-none" />
                                         <button type="submit" className="py-[21px] border-[0.5px] border-[#FFFFFF] rounded-[100px] uppercase font-normal leading-[18px]">Отправить</button>
                                     </div>
                                 </div>

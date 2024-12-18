@@ -1,14 +1,13 @@
 import express from 'express';
-import mysql from 'mysql'
 import cors from 'cors';
 import mongoose from 'mongoose';
 
 mongoose.connect(
-    'mongodb+srv://admin:admin1@mydb.9kmko.mongodb.net/?retryWrites=true&w=majority&appName=mydb'
+    'mongodb+srv://admin:admin1@cluster0.ao9at.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 ).then(() => {
     console.log('MongoDB is ON!')
 }).catch((err) => {
-    console.log('DB error' + err)
+    console.log('DB error ' + err)
 })
 
 const app = express();
@@ -38,9 +37,9 @@ async function main() {
         try {
             const formData = new Form(req.body)
             await formData.save()
-            res.status(201).alert('Data is sending successfully')
+            res.status(201).json('Data is sending successfully')
         } catch (err) {
-            alert.log('Error is' + err)
+            alert('Error is' + err)
         }
     })
     app.listen(PORT, () => {
